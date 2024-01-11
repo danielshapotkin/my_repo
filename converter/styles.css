@@ -1,0 +1,8 @@
+.btn-primary {
+    transition: 0.3s background-color;
+}
+
+.btn-primary:active {
+    background-color: darkblue;
+    transition-duration: 1s; /* Задаем длительность анимации для :active */
+}

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Converter</title>
+    <!-- Подключаем файлы Bootstrap CSS и JavaScript -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div id="loginForm" class="mt-4">
+        <h2 class="text-center">Вход</h2>
+        <form>
+            <div class="form-group">
+                <input type="text" class="form-control" id="loginUsername" placeholder="Имя пользователя">
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" id="loginPassword" placeholder="Пароль">
+            </div>
+            <button onclick="login()" class="btnbtn-primary">Войти</button>
+        </form>
+    </div>
+    
+    <div id="registerForm" class="mt-4">
+        <h2 class="text-center">Регистрация</h2>
+        <form>
+            <div class="form-group">
+                <input type="text" class="form-control" id="registerUsername" placeholder="Имя пользователя">
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" id="registerPassword" placeholder="Пароль">
+            </div>
+            <button onclick="register()" class="btnbtn-primary">Зарегистрироваться</button>
+        </form>
+    </div>
+    
+    <div class="container mt-5">
+        <h1 class="text-center">Конвертер валют</h1>
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="fromCurrency">Исходная валюта</label>
+                    <select class="form-control" id="fromCurrency">
+                        <option value="USD">Доллар США</option>
+                        <option value="EUR">Евро</option>
+                        <option value="JPY">Японская иена</option>
+                        <option value="GBP">Фунт стерлингов</option>
+                        <option value="AUD">Австралийский доллар</option>
+                        <option value="CAD">Канадский доллар</option>
+                        <option value="CHF">Швейцарский франк</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="toCurrency">Результирующая валюта</label>
+                    <select class="form-control" id="toCurrency">
+                        <option value="USD">Доллар США</option>
+                        <option value="EUR">Евро</option>
+                        <option value="JPY">Японская иена</option>
+                        <option value="GBP">Фунт стерлингов</option>
+                        <option value="AUD">Австралийский доллар</option>
+                        <option value="CAD">Канадский доллар</option>
+                        <option value="CHF">Швейцарский франк</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="amount">Введите сумму</label>
+                    <input type="number" class="form-control" id="amount" placeholder="Введите значение">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="result">Результат</label>
+                    <input type="text" class="form-control" id="result" readonly>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <button class="btnbtn-primary" id="convertButton">Конвертировать</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Исправленное место для истории конвертаций -->
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <details id="history">
+                <summary>История конвертаций </summary>
+                <ul>
+    <!--Тут можно записать пункты списка с использованием тега li -->
+                </ul>
+            </details>
+        </div>
+    </div>
+   
+
+    <!-- Подключаем файлы Bootstrap JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    
+    <!-- Подключаем скрипт (converter.js) -->
+    <script src="converter.js"></script>
+</body>
+</html>

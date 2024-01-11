@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Крестики-нолики</title>
+    <style>
+        .board {
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            grid-template-rows: repeat(3, 100px);
+        }
+
+        .cell {
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            font-size: 24px;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body> 
+    <h1>Игра "Крестики нолики"</h1>
+    <div class="board" id="board">
+        <div class="cell" onclick="zerozero(event)" data-cell></div>
+        <div class="cell" onclick="zeroone(event)" data-cell></div>
+        <div class="cell" onclick="zerotwo(event)" data-cell></div>
+        <div class="cell" onclick="onezero(event)" data-cell></div>
+        <div class="cell" onclick="oneone(event)" data-cell></div>
+        <div class="cell" onclick="onetwo(event)" data-cell></div>
+        <div class="cell" onclick="twozero(event)" data-cell></div>
+        <div class="cell" onclick="twoone(event)" data-cell></div>
+        <div class="cell" onclick="twotwo(event)" data-cell></div>
+    </div>
+    <div>
+        <button class="clear" onclick="clearBoard()">Очистить поле</button>
+    </div>
+    <script>
+        const cells = document.querySelectorAll(".cell")
+let currentPlayer = "X"
+let boardState = ['1', '2', '3', '4', '5',  '6', '7', '8', '9'];
+function isGameWon()
+{
+const winningCombinations = 
+[
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6],
+];
+for (const combination of winningCombinations)
+{
+    const [a, b, c] = combination
+    if (boardState[a] === boardState[b] && boardState[b] === boardState[c])
+    {
+        return true
+    }
+}
+return false
+}
+function zerozero(event)
+{
+    if (event.target.textContent === '')
+    {
+        event.target.textContent = currentPlayer
+        boardState[0] = currentPlayer
+    }
+    if (isGameWon())
+    {
+        alert("Победили " + currentPlayer)
+    }
+    currentPlayer = currentPlayer === "X" ? "O" : "X"
+}
+function zeroone(event)
+{
+    if (event.target.textContent === '')
+    {
+        event.target.textContent = currentPlayer
+        boardState[1] = currentPlayer
+    }
+    if (isGameWon())
+    {
+        alert("Победили " + currentPlayer)
+    }
+    currentPlayer = currentPlayer === "X" ? "O" : "X"
+
+}
+function zerotwo(event)
+{
+    if (event.target.textContent === '')
+    {
+        event.target.textContent = currentPlayer
+        boardState[2] = currentPlayer
+    }
+    if (isGameWon())
+    {
+        alert("Победили " + currentPlayer)
+    }
+    currentPlayer = currentPlayer === "X" ? "O" : "X"
+
+}
+function onezero(event)
+{
+    if (event.target.textContent === '')
+    {
+        event.target.textContent = currentPlayer
+        boardState[3] = currentPlayer
+    }
+    if (isGameWon())
+    {
+        alert("Победили " + currentPlayer)
+    }
+    currentPlayer = currentPlayer === "X" ? "O" : "X"
+
+}
+function oneone(event)
+{
+    if (event.target.textContent === '')
+    {
+        event.target.textContent = currentPlayer
+        boardState[4] = currentPlayer
+    }
+    if (isGameWon())
+    {
+        alert("Победили " + currentPlayer)
+    }
+    currentPlayer = currentPlayer === "X" ? "O" : "X"
+
+}
+function onetwo(event)
+{
+    if (event.target.textContent === '')
+    {
+        event.target.textContent = currentPlayer
+        boardState[5] = currentPlayer
+    }
+    if (isGameWon())
+    {
+        alert("Победили " + currentPlayer)
+    }
+    currentPlayer = currentPlayer === "X" ? "O" : "X"
+
+}
+function twozero(event)
+{
+    if (event.target.textContent === '')
+    {
+        event.target.textContent = currentPlayer
+        boardState[6] = currentPlayer
+    }
+    if (isGameWon())
+    {
+        alert("Победили " + currentPlayer)
+    }
+    currentPlayer = currentPlayer === "X" ? "O" : "X"
+
+}
+function twoone(event)
+{
+    if (event.target.textContent === '')
+    {
+        event.target.textContent = currentPlayer
+        boardState[7] = currentPlayer
+    }
+    if (isGameWon())
+    {
+        alert("Победили " + currentPlayer)
+    }
+    currentPlayer = currentPlayer === "X" ? "O" : "X"
+
+}
+function twotwo(event)
+{
+    if (event.target.textContent === '')
+    {
+        event.target.textContent = currentPlayer
+        boardState[8] = currentPlayer
+    }
+    if (isGameWon())
+    {
+        alert("Победили " + currentPlayer)
+    }
+    currentPlayer = currentPlayer === "X" ? "O" : "X"
+    
+}
+function clearBoard() {
+    cells.forEach(function(cell) {
+        cell.textContent = '';
+    });
+}
+    </script>
+</body>
+</html>
